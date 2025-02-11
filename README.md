@@ -1,50 +1,85 @@
-# React + TypeScript + Vite
+# React Frases App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tecnologías utilizadas
 
-Currently, two official plugins are available:
+- **React** – Biblioteca para la construcción de interfaces de usuario.
+- **TypeScript** – Superset de JavaScript que proporciona tipado estático.
+- **Tailwind CSS** – Framework de estilos para un diseño optimizado y escalable.
+- **Context API** – Gestión de estado global sin necesidad de bibliotecas externas.
+- **Custom Hooks** – Reutilización de lógica en componentes funcionales.
+- **Lazy Loading** – Carga diferida de componentes con `React.lazy()` y `Suspense`.
+- **Testing con Jest y React Testing Library** – Pruebas unitarias y de integración para asegurar calidad y estabilidad.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Instalación y ejecución
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Clonar el repositorio  
+```sh
+git clone https://github.com/tu-usuario/react-frases-app.git
+cd react-frases-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2. Instalar las dependencias  
+```sh
+npm install
 ```
+
+### 3. Iniciar el servidor de desarrollo  
+```sh
+npm run dev
+```
+
+La aplicación estará disponible en:  
+[http://localhost:5173/](http://localhost:5173/)
+
+---
+
+## Estructura del proyecto
+
+```plaintext
+📂 src
+ ┣ 📂 components          # Componentes reutilizables
+ ┃ ┣ 📂 ui               # Elementos de UI como botones e inputs
+ ┃ ┣ 📜 FormContainer.tsx # Formulario de ingreso de frases
+ ┃ ┣ 📜 Filter.tsx        # Filtro de frases
+ ┃ ┣ 📜 CardList.tsx      # Lista de frases con opción de eliminación
+ ┣ 📂 context             # Context API para manejo de estado global
+ ┃ ┣ 📜 PhrasesContext.tsx
+ ┃ ┣ 📜 PhrasesProvider.tsx
+ ┣ 📂 hooks               # Custom Hooks
+ ┃ ┣ 📜 usePhrasesLogic.ts # Lógica del manejo de frases
+ ┣ 📂 tests               # Pruebas unitarias y de integración
+ ┃ ┣ 📜 FormContainer.test.tsx
+ ┃ ┣ 📜 CardList.test.tsx
+ ┣ 📜 App.tsx             # Punto de entrada principal
+ ┣ 📜 main.tsx            # Renderizado de la aplicación
+ ┣ 📜 tailwind.config.ts  # Configuración de Tailwind CSS
+ ┗ 📜 tsconfig.json       # Configuración de TypeScript
+```
+
+---
+
+## Funcionalidades clave, manejo avanzado de React:
+
+- Manejo de errores para mejorar la experiencia del usuario.
+- Gestión de estado con Context API.
+- Carga diferida de componentes con `React.lazy()` y `Suspense`.
+- Pruebas unitarias y de integración con Jest y React Testing Library.
+
+---
+
+## Pruebas
+
+Para ejecutar los tests, use el siguiente comando:
+
+```sh
+npm test
+```
+
+Esto ejecutará todas las pruebas unitarias e integración utilizando Jest y React Testing Library.
+
+
+
+## Demo en vivo:
+https://quotesapp-three.vercel.app/
